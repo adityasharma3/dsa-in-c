@@ -1,4 +1,5 @@
 /*
+
 Let's take an array {20, 12 , 23, 55 ,21}
 
 Set the first element of the array as minimum.
@@ -14,7 +15,6 @@ Comparing with 23 : 12 < 23 , minimum = 12
 Comparing with 55 : 12 < 55 , minimum = 12
 
 Comparing with 21 : 12 < 21 , minimum = 12
-
 
 */
 
@@ -51,3 +51,9 @@ void main() {
 
 	printf("\n\n");
 }
+
+/*
+	unlike bubble sort, selection sort compares the arr[i] element to all the subsecuent elements in the array
+	and finds the minimum element to put in the front of the array.
+
+*/
