@@ -6,7 +6,7 @@ struct node *head = NULL;
 struct node {
 	int data;
 	struct node *next;
-};
+};			
 
 void delete_at_head() {
 	struct node *temp = head;
