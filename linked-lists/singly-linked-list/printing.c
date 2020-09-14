@@ -32,5 +32,5 @@ void main() {
 	third->data = 535;
 	third->next = NULL;
 
-	printLinkedList(head); 
+	printLinkedList(head);
 }
