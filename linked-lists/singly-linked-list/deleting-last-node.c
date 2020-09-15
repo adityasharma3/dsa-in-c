@@ -4,30 +4,30 @@
 struct Node *head = NULL;
 
 struct Node {
-    int data;
-    struct Node *next;
+	int data;
+	struct Node *next;
 };
 
-void delete_head() {
-    struct Node *temp = head;
-    struct Node *holder;
+void delete_last() {
+	struct Node *ptr = head;
+	struct Node *ptr1;
 
-    if (temp != NULL) {
-        holder = temp->next;
-        free(temp);
-        head = holder;
-    } else {
-        printf("Linked list is empty\n");
-    }
+	while (ptr->next != NULL) {
+		ptr1 = ptr;
+		ptr = ptr->next;
+	}
+	ptr1->next = NULL;
+	free(ptr);
 }
 
-void printLinkedList() {
-    struct Node *temp = head;
-    while (temp != NULL) {
-        printf("%d " , temp->data);
-        temp = temp->next;
-    }
-    printf("\n\n");
+void printlinkedlist() {
+	struct Node *temp = head;
+
+	while (temp != NULL) {
+		printf("%d ", temp->data);
+		temp = temp->next;
+	}
+	printf("\n\n");
 }
 
 void main() {
@@ -52,10 +52,10 @@ void main() {
     fourth->next = NULL;
 
     printf("\n");
-    printLinkedList();
+    printlinkedlist();
 
-    delete_head();
+    delete_last();
 
-    printLinkedList();           
+    printlinkedlist();           
 
 }

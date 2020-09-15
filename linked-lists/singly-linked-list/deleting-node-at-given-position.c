@@ -4,30 +4,31 @@
 struct Node *head = NULL;
 
 struct Node {
-    int data;
-    struct Node *next;
+	int data;
+	struct Node *next;
 };
 
-void delete_head() {
-    struct Node *temp = head;
-    struct Node *holder;
+void deleting_at_position(int position) {
+	struct Node *ptr = head;
+	struct Node *preptr = ptr;
 
-    if (temp != NULL) {
-        holder = temp->next;
-        free(temp);
-        head = holder;
-    } else {
-        printf("Linked list is empty\n");
-    }
+	int counter = 0;
+	while (ptr->next != NULL && counter != position) {
+		preptr = ptr;
+		ptr = ptr->next;
+		counter++;
+	}
+	preptr->next = ptr->next;
+	free(ptr);
 }
 
 void printLinkedList() {
-    struct Node *temp = head;
-    while (temp != NULL) {
-        printf("%d " , temp->data);
-        temp = temp->next;
-    }
-    printf("\n\n");
+	struct Node *temp = head;
+	while(temp != NULL) {
+		printf("%d ", temp->data);
+		temp = temp->next;
+	}
+	printf("\n\n");
 }
 
 void main() {
@@ -54,7 +55,7 @@ void main() {
     printf("\n");
     printLinkedList();
 
-    delete_head();
+    deleting_at_position(1);
 
     printLinkedList();           
 
