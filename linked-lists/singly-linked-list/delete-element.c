@@ -35,7 +35,7 @@ void delete_after(int element) {
 	struct Node *ptr = head;
 	struct Node *preptr = ptr;
 
-	while (ptr->data != element && ptr != NULL) {
+	while (preptr->data != element && ptr != NULL) {
 		preptr = ptr;
 		ptr = ptr->next;
 	}
