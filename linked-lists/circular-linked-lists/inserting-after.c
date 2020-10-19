@@ -9,11 +9,15 @@ struct Node {
 };
 
 int contains(int element) {
-	struct Node *temp = head;
+	struct Node *temp = head->next;
+	if (head->data == element) {
+		return 1;
+	}
 	while (temp != head) {
 		if (temp->data == element) {
 			return 1;
 		}
+		temp = temp->next;
 	}
 	return 0;
 }

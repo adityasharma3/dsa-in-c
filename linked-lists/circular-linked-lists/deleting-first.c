@@ -9,18 +9,15 @@ struct Node {
 };
 
 void delete_first() {
-	struct Node *last = head;
-	struct Node *temp = head;
-	struct Node *holder = temp;
+	struct Node *ptr = head;
+	struct Node *preptr = ptr;
 
-	while (last != head) {
-		last = last->next;
+	while (preptr->next != head) {
+		preptr = preptr->next;
 	}
-	holder = temp->next;
-	last->next = holder;
-	head = holder;
-	free(temp);
-
+	preptr->next = ptr->next;
+	head = ptr->next;
+	free(ptr);
 }
 
 void display(struct Node *head) {
@@ -29,7 +26,7 @@ void display(struct Node *head) {
 	do {
 		printf("%d ", temp->data);
 		temp = temp->next;
-	} while (temp != NULL);
+	} while (temp != head);
 	printf("\n\n");
 }
 

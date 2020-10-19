@@ -1,16 +1,26 @@
-#include<stdio.h>
-
-
-structpersonal{charname[20];
-	intday;
-	charmonth[10];
-	intyear;
-	float salary;
+#include <stdio.h>
+/* Created a structure here. The name of the structure is
+ * StudentData.
+ */
+struct StudentData{
+    char *stu_name;
+    int stu_id;
+    int stu_age;
 };
 
-main() {
-	struct personal person;
-	printf("Input Values\n");
-	scanf("%s %d %s %d %f",person.name,&person.day,person.month,&person.year,&person.salary);
-	printf("%s %d %s %d %f\n",person.name,person.day,person.month,person.year,person.salary);
+int main()
+{
+     /* student is the variable of structure StudentData*/
+     struct StudentData student;
+
+     /*Assigning the values of each struct member here*/
+     student.stu_name = "Steve";
+     student.stu_id = 1234;
+     student.stu_age = 30;
+
+     /* Displaying the values of struct members */
+     printf("Student Name is: %s", student.stu_name);
+     printf("\nStudent Id is: %d", student.stu_id);
+     printf("\nStudent Age is: %d", student.stu_age);
+     return 0;
 }

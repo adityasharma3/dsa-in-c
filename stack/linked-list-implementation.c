@@ -13,7 +13,6 @@ void push(int data) {
 	struct Node *new_node = (struct Node*)malloc(sizeof(struct Node));
 
 	new_node->data = data;
-
 	new_node->next = top;
 	top = new_node;
 }
@@ -54,12 +53,9 @@ void main() {
 	pop();
 	display(top);
 
-	// int ans1 = peek();
-	// printf("%d ", ans1);
 	peek();
 	pop();
 	display(top);
 	peek();
 	display(top);
-
 }
